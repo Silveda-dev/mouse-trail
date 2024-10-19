@@ -1,12 +1,15 @@
 let flagArray = [];
 
 //Return mouse position when move
-const click_handler = function(e) {
+const move_handler = function(e) {
     var posX = e.clientX;
     var posY = e.clientY;
 
     //Debugging
     console.log(posX, posY);
+
+    //Add new flag
+    new_flag(posX, posY);
 }
 
 //Make a new flag
@@ -17,7 +20,7 @@ const new_flag = function(x, y) {
     newFlag.style.top = y.toString().concat("px");
     newFlag.style.left = x.toString().concat("px");
     newFlag.style.display = "block";
-    newFlag.style.position = "relative";
+    newFlag.style.position = "absolute";
     newFlag.style.width = "20px";
     newFlag.style.height = "auto";
 
@@ -26,7 +29,4 @@ const new_flag = function(x, y) {
     flagArray.push(newFlag);
 }
 
-document.addEventListener("mousemove", click_handler);
-
-//Testing
-new_flag(100,200);
+document.addEventListener("mousemove", move_handler);
