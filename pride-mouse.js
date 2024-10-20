@@ -1,5 +1,6 @@
 let flagArray = [];
 let flagCoords = [];
+wait = false;
 
 //Return mouse position when move
 const move_handler = function(e) {
@@ -11,24 +12,31 @@ const move_handler = function(e) {
 
     //Add new flag
     new_flag(posX, posY);
+
+
 }
 
 //Make a new flag
 const new_flag = function(x, y) {
-    //Creating flag
-    const newFlag = document.createElement("img");
-    newFlag.src = "lesbian.jpg";
-    newFlag.style.top = y.toString().concat("px");
-    newFlag.style.left = x.toString().concat("px");
-    newFlag.style.display = "block";
-    newFlag.style.position = "absolute";
-    newFlag.style.width = "20px";
-    newFlag.style.height = "auto";
+    if (!wait) {
+        //Creating flag
+        const newFlag = document.createElement("img");
+        newFlag.src = "lesbian.jpg";
+        newFlag.style.top = y.toString().concat("px");
+        newFlag.style.left = x.toString().concat("px");
+        newFlag.style.display = "block";
+        newFlag.style.position = "absolute";
+        newFlag.style.width = "20px";
+        newFlag.style.height = "auto";
 
-    //Adding flag
-    document.body.appendChild(newFlag);
-    flagArray.push(newFlag);
-    flagCoords.push(y);
+        //Adding flag
+        document.body.appendChild(newFlag);
+        flagArray.push(newFlag);
+        flagCoords.push(y);
+
+        wait = true;
+        setTimeout(flag_timeout, 40);
+    }
 }
 
 const update_flags = function() {
@@ -46,6 +54,10 @@ const update_flags = function() {
     }
 }
 
+const flag_timeout = function() {
+    wait = false;
+}
+
 document.addEventListener("mousemove", move_handler);
 
-setInterval(update_flags, 30);
+setInterval(update_flags, 10);
