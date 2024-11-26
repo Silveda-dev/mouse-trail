@@ -12,8 +12,6 @@ const move_handler = function(e) {
 
     //Add new flag
     new_flag(posX, posY);
-
-
 }
 
 //Make a new flag
@@ -35,22 +33,16 @@ const new_flag = function(x, y) {
         flagCoords.push(y);
 
         wait = true;
-        setTimeout(flag_timeout, 40);
+        setTimeout(flag_timeout, 15);
     }
 }
 
 const update_flags = function() {
-    for (let i = 0; i < flagArray.length; i++) {
-        //Make flags fall
-        flagCoords[i] += 10;
-        if (flagCoords[i] > 550) {
-            //Clear flags that have fallen off-screen
-            flagCoords.splice(i,1);
-            document.body.removeChild(flagArray[i]);
-            flagArray.splice(i,1);
-        } else {
-            flagArray[i].style.top = flagCoords[i].toString().concat("px");
-        }
+    if (flagArray.length > 5) {
+        console.log("Check for updates!");
+        document.body.removeChild(flagArray[0]);
+        flagArray.shift();
+        flagCoords.shift();
     }
 }
 
