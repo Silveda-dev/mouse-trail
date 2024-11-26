@@ -8,7 +8,7 @@ const move_handler = function(e) {
     var posY = e.clientY;
 
     //Debugging
-    console.log(posX, posY);
+    //console.log(posX, posY);
 
     //Add new flag
     new_flag(posX, posY);
@@ -38,8 +38,9 @@ const new_flag = function(x, y) {
 }
 
 const update_flags = function() {
+    //Delete excess flags
     if (flagArray.length > 5) {
-        console.log("Check for updates!");
+        //console.log("Check for updates!");
         document.body.removeChild(flagArray[0]);
         flagArray.shift();
         flagCoords.shift();
