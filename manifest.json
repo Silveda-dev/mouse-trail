@@ -10,9 +10,5 @@
             "matches": ["http://*/*", "https://*/*"],
             "js": ["pride-mouse.js"]
         }
-    ],
-
-    "browser_action": {
-        "default_icon": "lesbian.jpg"
-    }
+    ]
 }
