@@ -19,7 +19,7 @@ const new_flag = function(x, y) {
     if (!wait) {
         //Creating flag
         const newFlag = document.createElement("img");
-        newFlag.src = "lesbian.jpg";
+        newFlag.src = browser.runtime.getURL("./lesbian.jpg");
         newFlag.style.top = y.toString().concat("px");
         newFlag.style.left = x.toString().concat("px");
         newFlag.style.display = "block";

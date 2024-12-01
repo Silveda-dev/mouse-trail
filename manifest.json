@@ -10,5 +10,12 @@
             "matches": ["http://*/*", "https://*/*"],
             "js": ["pride-mouse.js"]
         }
+    ],
+
+    "web_accessible_resources": [
+        {
+            "resources": ["lesbian.jpg"],
+            "matches": ["<all_urls>"]
+        }
     ]
 }
