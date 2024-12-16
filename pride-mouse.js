@@ -26,6 +26,7 @@ const new_flag = function(x, y) {
         newFlag.style.position = "absolute";
         newFlag.style.width = "20px";
         newFlag.style.height = "auto";
+        newFlag.style.userSelect = "none";
 
         //Adding flag
         document.body.appendChild(newFlag);
