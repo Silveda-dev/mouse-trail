@@ -1,14 +1,14 @@
 {
     "manifest_version": 3,
 
-    "name": "pride mouse",
+    "name": "mouse trail",
 
     "version": "0.1",
 
     "content_scripts": [
         {
             "matches": ["http://*/*", "https://*/*"],
-            "js": ["pride-mouse.js"]
+            "js": ["mouse-trail.js"]
         }
     ],
 
