@@ -19,7 +19,7 @@ const new_flag = function(x, y) {
     if (!wait) {
         //Creating flag
         const newFlag = document.createElement("img");
-        newFlag.src = browser.runtime.getURL("./lesbian.jpg");
+        newFlag.src = browser.runtime.getURL("./skull_flag.png");
         newFlag.style.top = y.toString().concat("px");
         newFlag.style.left = x.toString().concat("px");
         newFlag.style.display = "block";
@@ -39,13 +39,9 @@ const new_flag = function(x, y) {
 }
 
 const update_flags = function() {
-    //Delete excess flags
-    if (flagArray.length > 5) {
-        //console.log("Check for updates!");
-        document.body.removeChild(flagArray[0]);
-        flagArray.shift();
-        flagCoords.shift();
-    }
+    document.body.removeChild(flagArray[0]);
+    flagArray.shift();
+    flagCoords.shift();
 }
 
 const flag_timeout = function() {
@@ -54,4 +50,4 @@ const flag_timeout = function() {
 
 document.addEventListener("mousemove", move_handler);
 
-setInterval(update_flags, 10);
+setInterval(update_flags, 40);
