@@ -1,1 +1,1 @@
-# pride-mouse
+# mouse-trail
